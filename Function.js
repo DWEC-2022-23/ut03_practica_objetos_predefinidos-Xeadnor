@@ -1,4 +1,4 @@
-//#region Reyes Magos
+//Ejercicio 1:Reyes Magos
 const fechaActual = document.getElementById("fechaActual");
 const butreyesMagos = document.getElementById("butreyesMagos");
 const fechasRestante = document.getElementById("fechaRestante");
@@ -24,5 +24,39 @@ butreyesMagos.onclick = function () {
 
   fechasRestante.innerHTML = message;
 };
+//Ejercicio 2: Fecha y Hora
+const butFechaHora = document.getElementById("butFechaHora");
+const fechaHora = document.getElementById("fechaHora");
+butFechaHora.onclick= function(){
+  var today = new Date();
+  var now = today.toLocaleString();
+  fechaHora.innerHTML= "Hoy es: " + now;
+
+}
+/* // crea un nuevo objeto `Date`
+var today = new Date();
+ 
+// obtener la fecha y la hora
+var now = today.toLocaleString();
+console.log(now);
+ 
+butFechaHora
+*/
+
+
+
+//Ejercicio 3: AreaCirculo
+const radio = document.getElementById("radio");
+const areaCirculo = document.getElementById("areaCirculo");
+const butRadio = document.getElementById("butRadio");
+butRadio.onclick= function(){
+  let area;
+  area= Math.PI*Math.pow(parseFloat(radio.value),2);
+  console.log(radio);
+  let message= "El área del círculo es: " + area;
+  areaCirculo.innerHTML = message;
+
+}
+
  //   document.tarea.nombreobtenido.value = nombre;
   //  document.tarea.edadobtenida.value = edad;
