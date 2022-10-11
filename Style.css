@@ -42,6 +42,13 @@ footer{
     border:solid;
     margin-top:1vw;
 }
+#formulario{
+	width:100%;
+}
+#boton{
+	width:100%;
+	margin-top:1vw;
+}
 /*
 *{box-sizing:border-box;}
 
