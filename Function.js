@@ -2,7 +2,13 @@
 const fechaActual = document.getElementById("fechaActual");
 const butreyesMagos = document.getElementById("butreyesMagos");
 const fechasRestante = document.getElementById("fechaRestante");
+
 butreyesMagos.onclick = function () {
+  var result = reyesMagos(fechaActual.value);
+  fechasRestante.innerHTML = result;
+}
+function reyesMagos(fechaI) {
+
     var fechaReyes = new Date();
     let tiempo = 0;
     fechaReyes.setFullYear(new Date().getFullYear() + 1);
@@ -10,7 +16,7 @@ butreyesMagos.onclick = function () {
     fechaReyes.setDate(7);
     fechaReyes.setMonth(0);
 
-    var fecha = new Date(fechaActual.value);
+    var fecha = new Date(fechaI);
     tiempo = fechaReyes - fecha;
     let tiempoFinal = Math.floor(tiempo / (1000 * 60 * 60 * 24));
   let message;
@@ -22,12 +28,16 @@ butreyesMagos.onclick = function () {
   else
     message = "Faltan " + tiempoFinal + " días para que vengas los reyes.";
 
-  fechasRestante.innerHTML = message;
+  return message
 };
 //Ejercicio 2: Fecha y Hora
 const butFechaHora = document.getElementById("butFechaHora");
 const fechaHora = document.getElementById("fechaHora");
 butFechaHora.onclick= function(){
+  var result = fechaNow();
+  fechaHora.innerHTML = result;
+}
+function fechaNow() {
   var today = new Date();
   var day="";
 
@@ -58,8 +68,8 @@ butFechaHora.onclick= function(){
   }
   const meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
  // var now = today.toLocaleString();
-  fechaHora.innerHTML= "Hoy es "+ day+ ", " + today.getDate() + " " + meses[today.getMonth()]+" de "+ today.getFullYear() + " y son las " + today.getHours()+":"+ today.getMinutes()+" horas.";
-
+  var message = "Hoy es "+ day+ ", " + today.getDate() + " " + meses[today.getMonth()]+" de "+ today.getFullYear() + " y son las " + today.getHours()+":"+ today.getMinutes()+" horas.";
+ return message;
 }
 
 
@@ -70,13 +80,17 @@ const radio = document.getElementById("radio");
 const areaCirculo = document.getElementById("areaCirculo");
 const butRadio = document.getElementById("butRadio");
 butRadio.onclick= function(){
+var result = AreaPerimetro(radio.value);
+areaCirculo.innerHTML = result;
+}
+function AreaPerimetro(radio) {
   let area;
-  area= Math.PI*Math.pow(parseFloat(radio.value),2);
-  let perim= Math.PI*(parseFloat(radio.value*2));
+  area= Math.PI*Math.pow(parseFloat(radio),2);
+  let perim= Math.PI*(parseFloat(radio*2));
   area = area.toFixed(2);
   perim = perim.toFixed(2);
   let message= "El área del círculo es: " + area+" El perímetro del círculo es: "+ perim ;
-  areaCirculo.innerHTML = message;
+  return message;
 
 }
 
@@ -88,13 +102,18 @@ const butRandom = document.getElementById("butRandom");
 const randomNumber = document.getElementById("randomNumber");
 
 butRandom.onclick= function(){
-  if(minimo.value > maximo.value){
-    randomNumber.innerHTML = "Introduce bien los campos"
-  }else{
-  let value= Math.floor(Math.random() * (parseInt(maximo.value)-parseInt(minimo.value) +1) + parseInt(minimo.value));
-  randomNumber.innerHTML = value;
+var result = getRandom(minimo.value,maximo.value);
+randomNumber.innerHTML = result;
 }
-
+function getRandom(minimo,maximo) {
+  var message;
+  if(minimo > maximo){
+    message = "Introduce un numero en minimo menor que el maximo"
+  }else{
+  let value= Math.floor(Math.random() * (parseInt(maximo)-parseInt(minimo) +1) + parseInt(minimo));
+  message = value;
+}
+return message;
 }
 
 //Ejercicio 5: Funciones con cadenas
@@ -112,36 +131,48 @@ const guiones = document.getElementById("guiones");
 const vocales = document.getElementById("vocales");
 
 butMitad.onclick= function(){
-  var str = cadena.value;
- var n = str.length;
-if(n % 2 != 0){
-  n++;
-}
-  let result = str.substr(0, n/2);
-
+  let result = MidString(cadena.value);
  mitad.innerHTML = result;
 }
 butUltimo.onclick= function(){
-  var str = cadena.value;
-  var n = str.length;
-
-   let result = str.substr(n-1, n);
- 
+  let result = LastOfString(cadena.value)
   ultimo.innerHTML = result;
 }
 butInversa.onclick= function(){
-  var str = cadena.value;
-   let result = str.split("").reverse().join("");
- 
+  let result = Inverse(cadena.value)
   inversa.innerHTML = result;
 }
 butGuiones.onclick= function(){
-  var str = cadena.value;
-  let result = str.split("")
- guiones.innerHTML = result.join("-")
+  let result = StringGuiones(cadena.value)
+ guiones.innerHTML = result
 }
 butVocales.onclick= function(){
-  var str = cadena.value;
-  var result= str.match(/[aeiouáéíóú]/ig).length;
+  let result = CountVowels(cadena.value)
  vocales.innerHTML = result
+}
+
+function MidString(cadena) {
+  var str = cadena;
+  var n = str.length;
+ if(n % 2 != 0){
+   n++;
+ }
+   return str.substr(0, n/2);
+}
+function LastOfString(cadena) {
+  var str = cadena;
+  var n = str.length;
+  return str.substr(n-1, n);
+}
+function Inverse(cadena) {
+  var str = cadena;
+  return str.split("").reverse().join("");
+}
+function StringGuiones(cadena) {
+  var str = cadena;
+  return   str.split("").join("-")
+}
+function CountVowels(cadena) {
+  var str = cadena;
+  return str.match(/[aeiouáéíóú]/ig).length;
 }
