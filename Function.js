@@ -12,8 +12,8 @@ function reyesMagos(fechaI) {
     var fechaReyes = new Date();
     let tiempo = 0;
     fechaReyes.setFullYear(new Date().getFullYear() + 1);
-    fechaReyes.setHours(0, 0, 0);
-    fechaReyes.setDate(7);
+    fechaReyes.setHours(23, 59, 59);
+    fechaReyes.setDate(6);
     fechaReyes.setMonth(0);
 
     var fecha = new Date(fechaI);
@@ -22,7 +22,7 @@ function reyesMagos(fechaI) {
   let message;
 
   if (tiempoFinal < 0)
-    message = "Has viajado en el tiempoFinal y se te han pasado los reyes.";
+    message = "Has viajado en el tiempo y se te han pasado los reyes.";
   else if (tiempoFinal == 0)
     message = "¡Mira debajo de el árbol que han llegado hoy!";
   else
@@ -34,11 +34,11 @@ function reyesMagos(fechaI) {
 const butFechaHora = document.getElementById("butFechaHora");
 const fechaHora = document.getElementById("fechaHora");
 butFechaHora.onclick= function(){
-  var result = fechaNow();
+  var today = new Date();
+  var result = fechaNow(today);
   fechaHora.innerHTML = result;
 }
-function fechaNow() {
-  var today = new Date();
+function fechaNow(today) {
   var day="";
 
   switch (today.getDay()) {
@@ -68,7 +68,7 @@ function fechaNow() {
   }
   const meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
  // var now = today.toLocaleString();
-  var message = "Hoy es "+ day+ ", " + today.getDate() + " " + meses[today.getMonth()]+" de "+ today.getFullYear() + " y son las " + today.getHours()+":"+ today.getMinutes()+" horas.";
+  var message = "Hoy es "+ day+ ", " + today.getDate() + " de " + meses[today.getMonth()]+" de "+ today.getFullYear() + " y son las " + today.getHours()+":"+ today.getMinutes()+" horas.";
  return message;
 }
 
@@ -84,6 +84,10 @@ var result = AreaPerimetro(radio.value);
 areaCirculo.innerHTML = result;
 }
 function AreaPerimetro(radio) {
+  if( radio < 0){
+    return NaN;
+  }
+
   let area;
   area= Math.PI*Math.pow(parseFloat(radio),2);
   let perim= Math.PI*(parseFloat(radio*2));
@@ -107,7 +111,7 @@ randomNumber.innerHTML = result;
 }
 function getRandom(minimo,maximo) {
   var message;
-  if(minimo > maximo){
+  if(parseInt(minimo) > parseInt(maximo)){
     message = "Introduce un numero en minimo menor que el maximo"
   }else{
   let value= Math.floor(Math.random() * (parseInt(maximo)-parseInt(minimo) +1) + parseInt(minimo));

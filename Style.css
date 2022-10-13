@@ -107,5 +107,8 @@ button{
 		justify-content: center;
 	}
 #minimo{
-	padding-right: 3vw;
+	margin-left: -3vw;
+}
+#maximo{
+	margin-left: -4vw;
 }
