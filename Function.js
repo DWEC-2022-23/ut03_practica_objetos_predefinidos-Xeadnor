@@ -24,7 +24,7 @@ function reyesMagos(fechaI) {
   if (tiempoFinal < 0)
     message = "Te has pasado el dia de reyes de este año!";
   else if (tiempoFinal == 0)
-    message = "¡Mira debajo de el árbol que han llegado hoy!";
+    message = "¡Mira debajo del árbol que han llegado hoy!";
   else
     message = "Faltan " + tiempoFinal + " días para que vengas los reyes.";
 
