@@ -11,9 +11,9 @@ describe("Testeando fecha hasta Reyes Magos", function () {
         reyesMagos(new Date(2023,0,6)).should.be.equal("¡Mira debajo de el árbol que han llegado hoy!");
     });
     it("Pruebas con un dia adelantado a los reyes magos", function () {
-        reyesMagos(new Date(2023,0,7)).should.be.equal("Has viajado en el tiempo y se te han pasado los reyes.");
-        reyesMagos(new Date(2023,3,12)).should.be.equal("Has viajado en el tiempo y se te han pasado los reyes.");
-        reyesMagos(new Date(2053,0,6)).should.be.equal("Has viajado en el tiempo y se te han pasado los reyes.");
+        reyesMagos(new Date(2023,0,7)).should.be.equal("Te has pasado el dia de reyes de este año!");
+        reyesMagos(new Date(2023,3,12)).should.be.equal("Te has pasado el dia de reyes de este año!");
+        reyesMagos(new Date(2053,0,6)).should.be.equal("Te has pasado el dia de reyes de este año!");
     });
     
 });

@@ -22,7 +22,7 @@ function reyesMagos(fechaI) {
   let message;
 
   if (tiempoFinal < 0)
-    message = "Has viajado en el tiempo y se te han pasado los reyes.";
+    message = "Te has pasado el dia de reyes de este año!";
   else if (tiempoFinal == 0)
     message = "¡Mira debajo de el árbol que han llegado hoy!";
   else
