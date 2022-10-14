@@ -31,7 +31,7 @@ function reyesMagos(fechaI) {
    if (tiempoFinal == 0)
     message = "¡Mira debajo del árbol que han llegado hoy!";
   else
-    message = "Faltan " + tiempoFinal + " días para que vengas los reyes.";
+    message = "Faltan " + tiempoFinal + " días para que vengan los reyes.";
 
   return message
 };
