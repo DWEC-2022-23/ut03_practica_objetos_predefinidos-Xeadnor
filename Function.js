@@ -8,22 +8,27 @@ butreyesMagos.onclick = function () {
   fechasRestante.innerHTML = result;
 }
 function reyesMagos(fechaI) {
-
+    var fecha = new Date(fechaI);
     var fechaReyes = new Date();
     let tiempo = 0;
-    fechaReyes.setFullYear(new Date().getFullYear() + 1);
+    var año = fecha.getFullYear();
+    var diaA = fecha.getDate();
+    var mesA = fecha.getMonth();
+    if(diaA <= 6 && mesA == 0){
+      fechaReyes.setFullYear(año);
+    }else{
+      fechaReyes.setFullYear(año + 1);
+    }
+
     fechaReyes.setHours(23, 59, 59);
     fechaReyes.setDate(6);
     fechaReyes.setMonth(0);
 
-    var fecha = new Date(fechaI);
+    
     tiempo = fechaReyes - fecha;
     let tiempoFinal = Math.floor(tiempo / (1000 * 60 * 60 * 24));
   let message;
-
-  if (tiempoFinal < 0)
-    message = "Te has pasado el dia de reyes de este año!";
-  else if (tiempoFinal == 0)
+   if (tiempoFinal == 0)
     message = "¡Mira debajo del árbol que han llegado hoy!";
   else
     message = "Faltan " + tiempoFinal + " días para que vengas los reyes.";
