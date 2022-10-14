@@ -3,17 +3,17 @@ chai.should();
 
 describe("Testeando fecha hasta Reyes Magos", function () {
     it("Pruebas con una fecha anterior al dia de reyes ese mismo año", function () {
-        reyesMagos(new Date(2023,0,5)).should.be.equal("Faltan 1 días para que vengas los reyes.");
-        reyesMagos(new Date(2022,0,1)).should.be.equal("Faltan 5 días para que vengas los reyes.");
-        reyesMagos(new Date(2017,0,2)).should.be.equal("Faltan 4 días para que vengas los reyes.");
+        reyesMagos(new Date(2023,0,5)).should.be.equal("Faltan 1 días para que vengan los reyes.");
+        reyesMagos(new Date(2022,0,1)).should.be.equal("Faltan 5 días para que vengan los reyes.");
+        reyesMagos(new Date(2017,0,2)).should.be.equal("Faltan 4 días para que vengan los reyes.");
     });
     it("Prueba con la misma fecha que vienen los reyes magos", function () {
         reyesMagos(new Date(2023,0,6)).should.be.equal("¡Mira debajo del árbol que han llegado hoy!");
     });
     it("Pruebas con un dia posterior al dia de reyes ese mismo año", function () {
-        reyesMagos(new Date(2023,0,7)).should.be.equal("Faltan 364 días para que vengas los reyes.");
-        reyesMagos(new Date(2023,3,12)).should.be.equal("Faltan 270 días para que vengas los reyes.");
-        reyesMagos(new Date(2053,11,6)).should.be.equal("Faltan 31 días para que vengas los reyes.");
+        reyesMagos(new Date(2023,0,7)).should.be.equal("Faltan 364 días para que vengan los reyes.");
+        reyesMagos(new Date(2023,3,12)).should.be.equal("Faltan 270 días para que vengan los reyes.");
+        reyesMagos(new Date(2053,11,6)).should.be.equal("Faltan 31 días para que vengan los reyes.");
     });
     
 });
