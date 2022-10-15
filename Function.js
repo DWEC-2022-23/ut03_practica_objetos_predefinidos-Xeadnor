@@ -29,7 +29,7 @@ function reyesMagos(fechaI) {
     let tiempoFinal = Math.floor(tiempo / (1000 * 60 * 60 * 24));
   let message;
    if (tiempoFinal == 0)
-    message = "¡Mira debajo del árbol que han llegado hoy!";
+    message = "¡Es hoy, es hoy!";
   else
     message = "Faltan " + tiempoFinal + " días para que vengan los reyes.";
 
