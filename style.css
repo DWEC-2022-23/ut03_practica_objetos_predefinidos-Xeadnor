@@ -1,0 +1,114 @@
+
+*{box-sizing:border-box;
+	font: 100% sans-serif;}
+
+body{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+
+}
+header{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:100%;
+	justify-content:center;
+	margin-top:2vw;
+}
+	h3{
+		display: flex;
+		justify-content: flex-start;
+		width: 100%;
+		font-weight: bold;
+		font-size: large;
+		
+	}
+	p{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+footer{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:100%;
+	justify-content:center;
+	margin-top:2vw;
+}
+
+#ejercicio{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:100%;
+	background-color:#e7edef;
+    margin-top:1vw;
+	padding-left: 1vw;
+}
+#formulario{
+	width:100%;
+}
+#boton{
+	width:100%;
+	display: flex;
+	margin-top:1vw;
+	margin-bottom: 1vw;
+	justify-content:center;
+}
+button{
+  background-color: #65aa8f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  text-align: center;
+  text-decoration: solid;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+#formulario{
+	display: flex;
+	justify-content:center;
+	
+}
+	input{
+		width:max-content;
+		margin: 2vw;
+		border: 2px solid #65aa8f;
+		border-radius: 4px;
+	}
+	textarea{
+		width:max-content;
+		margin: 2vw;
+		border: 2px solid #65aa8f;
+		border-radius: 4px;
+	}
+#salida{
+	display: flex;
+	justify-content:space-around;
+	flex-wrap: wrap;
+	width: 100%;
+	
+}
+	#salida div{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 20%;
+		margin-top: 3vw;
+		margin-bottom: 3vw;
+	}
+	#salida div p{
+		justify-content: center;
+	}
+#minimo{
+	margin-left: -3vw;
+}
+#maximo{
+	margin-left: -4vw;
+}

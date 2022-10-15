@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarea Cliente</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+    </head>
+    <body>
+        <header>
+            <img src="fotoFormulario.jpg">
+        </header>
+
+    
+        <div id="ejercicio">
+            <h3>1. Reyes magos:</h3><br>
+            <p>Introduce una fecha para calcular cuántos días quedan para que vengas los reyes magos.</p>
+            <div id="formulario">
+                <input type="date" id="fechaActual">
+            </div>
+
+            <div id="boton">
+                <button id="butreyesMagos">Calcular fecha </button>
+            </div>  
+            <div id="salida">
+            <p id="fechaRestante"></p>
+            </div>
+
+        </div>
+
+        <div id="ejercicio">
+            <h3>2. Fecha y hora actual:</h3><br>
+            <p>Pincha en el botón para ver la fecha y hora actual.</p>
+            <div id="boton">
+                <button id="butFechaHora">Click here! </button>
+            </div> 
+            <div id="salida">
+                <p id="fechaHora"></p>
+             </div>
+      </div>
+        <div id="ejercicio">
+            <h3>3. Calcula el área del círculo:</h3><br>
+            <p>Introduce el rádio del círculo para calcular su área.</p>
+            <div id="formulario">
+                <input type="number" id="radio">
+            </div>
+
+            <div id="boton">
+                <button id="butRadio">Calcular área </button>
+            </div>  
+            <div id="salida">
+            <p id="areaCirculo"></p>
+            </div>
+        </div>
+        <div id="ejercicio">
+            <h3>4. Obtener un número alaorio entre dos números:</h3><br>
+            <p>Introduce el valor mínimo y máximo.</p>
+            <div id="formulario">
+                Minimo: <input type="number" id="minimo">
+                Maximo: <input type="number" id="maximo">
+            </div>
+
+            <div id="boton">
+                <button id="butRandom">Calcular Random </button>
+            </div>  
+            <div id="salida">
+            Numero aleatorio: <p id="randomNumber"></p>
+            </div>
+        </div>
+        <div id="ejercicio">
+            <h3>5.Ejercicio con cadenas.</h3><br>
+            <p>Introduce una cadena.</p>
+            <div id="formulario">
+                <textarea id="cadena" cols="79" rows="5"></textarea>
+            
+            </div>
+
+            <div id="boton">
+                <button id="butMitad">Mitad de la cadena </button>
+                <button id="butUltimo">Ultima letra </button>
+                <button id="butInversa">Cadena inversa </button>
+                <button id="butGuiones">Cadena con guiones </button>
+                <button id="butVocales">Numero de vocales</button>
+            </div>  
+            <div id="salida">
+                <div>Mitad de la cadena:  <p id="mitad"></p></div>
+                <div>Último caracter de la cadena:  <p id="ultimo"></p></div> 
+                <div>Cadena inversa:   <p id="inversa"></p></div>
+                <div>Cadena con guiones:      <p id="guiones"></p></div>
+                <div>Total de vocales en la cadena:   <p id="vocales"></p></div>
+            </div>
+
+        </div>
+
+
+        <footer>Trabajo realizado por Pablo Sainz y Marta Torres</footer>
+        
+
+        <script src="Function.js"></script>
+
+    </body>
+</html>
