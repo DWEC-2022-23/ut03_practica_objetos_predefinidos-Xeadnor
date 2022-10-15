@@ -8,7 +8,7 @@ describe("Testeando fecha hasta Reyes Magos", function () {
         reyesMagos(new Date(2017,0,2)).should.be.equal("Faltan 4 días para que vengan los reyes.");
     });
     it("Prueba con la misma fecha que vienen los reyes magos", function () {
-        reyesMagos(new Date(2023,0,6)).should.be.equal("¡Mira debajo del árbol que han llegado hoy!");
+        reyesMagos(new Date(2023,0,6)).should.be.equal("¡Es hoy, es hoy!");
     });
     it("Pruebas con un dia posterior al dia de reyes ese mismo año", function () {
         reyesMagos(new Date(2023,0,7)).should.be.equal("Faltan 364 días para que vengan los reyes.");
